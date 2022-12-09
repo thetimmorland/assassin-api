@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -exou pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+poetry run isort . --check --diff
+poetry run black . --check --diff
+poetry run pytest
